@@ -29,8 +29,7 @@ export function DashboardPage({  }) {
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
-      <h1>Hello World</h1>
-      {/*<DashboardComponent onSubmit={onSubmitForm} />*/}
+      <DashboardComponent onSubmit={onSubmitForm} />
     </article>
   );
 }

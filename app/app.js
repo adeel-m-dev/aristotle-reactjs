@@ -19,6 +19,11 @@ import 'sanitize.css/sanitize.css';
 
 // global css
 import './public/css/style.css';
+import './public/css/mine.css';
+
+// Icons
+import './public/icons/md-fonts/mdf.css';
+import './public/icons/icofont/icofont.min.css';
 
 // Import root app
 import App from 'containers/App';

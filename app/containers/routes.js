@@ -6,6 +6,7 @@ const LoginPage = loadable(() => import('./NonMember/LoginPage'));
 const ForgotPasswordPage = loadable(() => import('./NonMember/ForgotPasswordPage'));
 const ResetPasswordPage = loadable(() => import('./NonMember/ResetPasswordPage'));
 const DashboardPage = loadable(() => import('./Dashboard'));
+const RegisterPage = loadable(() => import('./NonMember/RegisterPage'));
 
 const routes = [
   {
@@ -20,7 +21,7 @@ export default routes;
 export const loginRoute = [
   {
     path: '/register',
-    component: LoginPage,
+    component: RegisterPage,
   },
   {
     path: '/login',

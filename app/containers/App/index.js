@@ -16,6 +16,7 @@ import Master from '../Master';
 import GlobalStyle from '../../global-styles';
 import routes, { loginRoute } from '../routes';
 import MasterNonMember from '../MasterNonMember';
+import Register from '../../containers/Register';
 
 function RouteWithSubRoutes(route) {
   return (
@@ -55,6 +56,16 @@ export default function App() {
             }
           </Master>
         </Route>
+        <Route path={'/register'}>
+          <Register>
+            {
+              routes.map((route, i) => (
+                <RouteWithSubRoutes key={i} {...route} />
+              ))
+            }
+          </Register>
+        </Route>
+
 
         {/*No Logged in Member routing*/}
         <Route path={'/'}>
@@ -69,9 +80,6 @@ export default function App() {
           </MasterNonMember>
         </Route>
         {/*No Logged in Member routing*/}
-        <Route path={'/register'}>
-          {/*  Loading register page component here  */}
-        </Route>
       </Switch>
       <GlobalStyle />
     </AppWrapper>

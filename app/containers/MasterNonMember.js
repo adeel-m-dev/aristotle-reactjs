@@ -22,7 +22,5 @@ const MasterNonMember = props => (
         </div>
       </div>
     </>
-  )
-;
-
+  );
 export default MasterNonMember;

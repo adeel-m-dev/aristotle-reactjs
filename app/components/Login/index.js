@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 export default class Index extends Component {
   render() {
     return (
@@ -37,29 +37,24 @@ export default class Index extends Component {
               </div>
             </div>
             <div className='form-group'>
-              <a href='page-forgot-password.html'>
+              <Link to={'/forgot-password'}>
                 Forgot Password?
-              </a>
+              </Link>
+
             </div>
           </div>
           <div className='text-center'>
-            <button
-              type='submit'
-              className='btn btn-primary btn-block'
-            >
+            <Link to={'/dashboard'} className="btn btn-primary btn-block">
               Sign Me In
-            </button>
+            </Link>
           </div>
         </form>
         <div className='new-account mt-3'>
           <p>
             Don't have an account?{' '}
-            <a
-              className='text-primary'
-              href='./page-register.html'
-            >
+            <Link to={'/register'} className="text-primary">
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </>

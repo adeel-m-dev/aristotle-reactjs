@@ -13,29 +13,21 @@ import { createStructuredSelector } from 'reselect';
 
 import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
-import { makeSelectLoading, makeSelectError } from '../../App/selectors';
-import { loadRepos } from '../../App/actions';
+import { makeSelectLoading, makeSelectError } from '../App/selectors';
+import { loadRepos } from '../App/actions';
 import { changeUsername, onSubmitForm } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import RegisterComponent from '../../../components/Register';
+import RegisterComponent from '../../components/Register';
 
-const key = 'login';
+const key = 'register';
 
-export function RegisterPage({ username, loading, error, onSubmitForm }) {
-  useInjectReducer({ key, reducer });
-  useInjectSaga({ key, saga });
-
-  useEffect(() => {
-    // When initial state username is not null, submit the form to load repos
-    if (username && username.trim().length > 0) onSubmitForm();
-  }, []);
-
+export function RegisterPage({}) {
   return (
     <article>
       <Helmet>
-        <title>Login</title>
+        <title>Register</title>
       </Helmet>
       <RegisterComponent onSubmit={onSubmitForm} />
     </article>
@@ -45,24 +37,16 @@ export function RegisterPage({ username, loading, error, onSubmitForm }) {
 RegisterPage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func,
 };
 
 // functions
 const mapStateToProps = createStructuredSelector({
-  username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
 });
 
 export function mapDispatchToProps(dispatch) {
-  return {
-    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm,
-  };
+  return {};
 }
 
 const withConnect = connect(
