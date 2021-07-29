@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
 export default class Index extends Component {
   render() {
     return (
@@ -44,7 +45,7 @@ export default class Index extends Component {
             </div>
           </div>
           <div className='text-center'>
-            <Link to={'/dashboard'} className="btn btn-primary btn-block">
+            <Link style={{ paddingTop: 9 }} to={'/dashboard'} className="btn btn-primary btn-block">
               Sign Me In
             </Link>
           </div>

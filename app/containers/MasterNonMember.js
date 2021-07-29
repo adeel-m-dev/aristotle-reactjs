@@ -2,7 +2,7 @@ import React from 'react';
 
 const MasterNonMember = props => (
     <>
-      <div className='h-100' style={{ marginTop: 200 }}>
+      <div className='h-100' style={{ paddingTop: 200 }}>
         <div className='authincation h-100'>
           <div className='container h-100'>
             <div className='row justify-content-center h-100 align-items-center'>
